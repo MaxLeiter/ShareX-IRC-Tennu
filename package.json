@@ -1,0 +1,31 @@
+{
+  "name": "sharex",
+  "version": "1.0.0",
+  "description": "An IRC bot for #ShareX on freenode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/MaxLeiter/ShareX-IRC"
+  },
+  "keywords": [
+    "ShareX",
+    "IRC",
+    "tennu"
+  ],
+  "author": "MaxLeiter",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "dirty": "^0.9.9",
+    "lodash": "^3.10.1",
+    "r-result": "^1.1.1",
+    "tennu": "^4.3.4",
+    "tennu-factoids": "^4.2.3",
+    "tennu-github": "^1.0.1",
+    "tennu-replies": "^4.2.3",
+    "winston": "^2.1.0"
+  }
+}

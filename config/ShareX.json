@@ -1,0 +1,27 @@
+{
+    "server": "irc.freenode.net",
+    "port": 6667,
+    "nicknames": ["ShareX", "ShareX-Bot"],
+    "username": "ShareX",
+    "realname": "ShareX Bot",
+
+    "plugins": ["sharex", "admin", "control", "github", "replies", "welcome"],
+    "command-trigger": "!",
+    "channels": ["#ShareX"],
+    "nickserv": "nickserv",
+    "auth-password": null,
+
+    "replies-database": "db/db.json",
+    "replies-delay": "30000",
+    
+    "github-user": "ShareX",
+    "github-repo": "ShareX",
+    "tls": false,
+
+    "admins": [
+        {"nickname": "Giraffe_", "username": "Giraffe_", "identifiedas": "Giraffe_"},
+        {"nickname": "Jaex", "username": "Jaex", "identifiedas": "Jaex"}
+    ]
+
+}
+
