@@ -44,11 +44,9 @@ var addToList = function(message) {
 		"timestamp" : new Date(),
 		"channel": message.channel,
 	};
-	console.log(nicklist.hasOwnProperty(message.nickname.toLowerCase()));
 	if(!nicklist.hasOwnProperty(message.nickname.toLowerCase())) {
 		nicklist[message.nickname.toLowerCase()] = record;
-		console.log(nicklist);
-		bot.say(message.channel, "Welcome, " + message.nickname + "! I think it's your first time here; if you have a question, please ask and wait for a response. There isn't always someone reading the chat!");
+		bot.notice(message.nickname, "Welcome, " + message.nickname + "! I think it's your first time here; if you have a question, please ask and wait for a response. There isn't always someone reading the chat!");
 		serialize();
 	}
 
