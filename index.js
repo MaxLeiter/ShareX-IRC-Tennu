@@ -19,13 +19,15 @@ var logger = new(winston.Logger)({
 });
 
 var serialize = function() {
-	var txt = JSON.stringify(nicklist, null, 4);
+	console.log('serialize() fired');
+	var txt = JSON.stringify(nicklist);
 	fs.writeFile('nicklist.log', txt, {}, function(err) {
 		if (err) throw err;
 	});
 };
 
 var loadLastState = function() {
+	console.log('loadLastState() fired');
 	fs.readFile('nicklist.log', {}, function(err, data) {
 		if (err) {
 			console.log("Unable to read log file");
@@ -37,11 +39,19 @@ var loadLastState = function() {
 };
 
 var addToList = function(message) {
-		var record = { 
-			"timestamp" : new Date(),
-			"channel": message.channel,
-		};
+	console.log('addToList() fired');
+	var record = { 
+		"timestamp" : new Date(),
+		"channel": message.channel,
+	};
+	console.log(nicklist.hasOwnProperty(message.nickname.toLowerCase()));
+	if(!nicklist.hasOwnProperty(message.nickname.toLowerCase())) {
 		nicklist[message.nickname.toLowerCase()] = record;
+		console.log(nicklist);
+		bot.say(message.channel, "Welcome, " + message.nickname + "! I think it's your first time here; if you have a question, please ask and wait for a response. There isn't always someone reading the chat!");
+		serialize();
+	}
+
 }
 
 loadLastState();
@@ -50,11 +60,7 @@ process.on('exit', serialize);
 
 bot.on('join', function (message) {
 	logger.log("info", message.nickname + ' joined ' + message.channel);
-	loadLastState();
-	if(nicklist.hasOwnProperty(message.nickname)) {
-		addToList(message);\
-		serialize();
-	} 
+	addToList(message);
 });
 
 var endTime;

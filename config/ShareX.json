@@ -5,9 +5,9 @@
     "username": "ShareX",
     "realname": "ShareX Bot",
 
-    "plugins": ["sharex", "admin", "control", "github", "replies", "welcome"],
+    "plugins": ["sharex", "admin", "control", "github", "replies"],
     "command-trigger": "!",
-    "channels": ["#ShareX"],
+    "channels": ["#ShareX-test"],
     "nickserv": "nickserv",
     "auth-password": null,
 
