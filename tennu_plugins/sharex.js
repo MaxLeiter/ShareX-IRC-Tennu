@@ -4,7 +4,6 @@ var index = require('../index');
 
 var ShareXPlugin = {
     init: function (client, imports) {
-
         return {
             exports: {
             },
